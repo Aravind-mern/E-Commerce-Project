@@ -31,7 +31,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
     image_url: `/images/${req.file.filename}`
   })
 })
-
+ 
 
 // Route for Images folder
 app.use('/images', express.static('upload/images'));
@@ -92,7 +92,8 @@ app.post('/login', async (req, res) => {
     const passCompare = req.body.password === user.password;
     if (passCompare) {
       const data = {
-        user: {
+        user:
+        {
           id: user.id
         }
       }
